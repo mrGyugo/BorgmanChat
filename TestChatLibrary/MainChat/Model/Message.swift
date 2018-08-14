@@ -8,7 +8,11 @@
 
 import Foundation
 
-struct Message: MessageProtocol {
+struct Message: Hashable, CustomStringConvertible {
+    var description: String {
+        return message
+    }
+    
     
     let message: String
     let createDate: Date
@@ -18,7 +22,10 @@ struct Message: MessageProtocol {
         self.createDate = createDate
     }
     
-    public static func == (lhs: Message, rhs: Message) -> Bool {
-        return lhs.message == rhs.message && lhs.createDate == rhs.createDate
+    var hashValue: Int {
+        return (message + "\(createDate)").hashValue
     }
+    
+    
+    
 }

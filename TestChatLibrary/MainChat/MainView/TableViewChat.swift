@@ -8,7 +8,7 @@
 
 import UIKit
 
-class ColletionViewChat: UITableView {
+class TableViewChat: UITableView {
     
     
     override init(frame: CGRect, style: UITableViewStyle) {
@@ -18,13 +18,12 @@ class ColletionViewChat: UITableView {
     
     required init?(coder aDecoder: NSCoder) {
         super.init(coder: aDecoder)
-        
         customInit()
     }
 
     
     private func customInit() {
-        register(UINib(nibName: "MainChatFieldCell", bundle: nil), forCellReuseIdentifier: "MainChatCell")
+        register(UINib(nibName: "TempViewCell", bundle: nil), forCellReuseIdentifier: "TempViewCell")
     }
 
     

@@ -13,7 +13,7 @@
         <placeholder placeholderIdentifier="IBFilesOwner" id="-1" userLabel="File's Owner" customClass="MainChatField" customModule="TestChatLibrary" customModuleProvider="target">
             <connections>
                 <outlet property="contentView" destination="iN0-l3-epB" id="akp-FG-I4T"/>
-                <outlet property="tableView" destination="fYQ-bY-A4C" id="dCm-7A-9t6"/>
+                <outlet property="tableView" destination="8ou-k5-FPC" id="0vb-Yd-LZc"/>
             </connections>
         </placeholder>
         <placeholder placeholderIdentifier="IBFirstResponder" id="-2" customClass="UIResponder"/>
@@ -21,27 +21,22 @@
             <rect key="frame" x="0.0" y="0.0" width="292" height="463"/>
             <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
             <subviews>
-                <collectionView clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="scaleToFill" dataMode="none" translatesAutoresizingMaskIntoConstraints="NO" id="fYQ-bY-A4C" customClass="ColletionViewChat" customModule="TestChatLibrary" customModuleProvider="target">
+                <tableView clipsSubviews="YES" contentMode="scaleToFill" alwaysBounceVertical="YES" style="plain" separatorStyle="none" rowHeight="-1" estimatedRowHeight="-1" sectionHeaderHeight="28" sectionFooterHeight="28" translatesAutoresizingMaskIntoConstraints="NO" id="8ou-k5-FPC" customClass="TableViewChat" customModule="TestChatLibrary" customModuleProvider="target">
                     <rect key="frame" x="0.0" y="0.0" width="292" height="463"/>
                     <color key="backgroundColor" white="0.0" alpha="0.0" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
-                    <collectionViewFlowLayout key="collectionViewLayout" minimumLineSpacing="10" minimumInteritemSpacing="10" id="VRy-Gd-Q1q">
-                        <size key="itemSize" width="50" height="50"/>
-                        <size key="headerReferenceSize" width="0.0" height="0.0"/>
-                        <size key="footerReferenceSize" width="0.0" height="0.0"/>
-                        <inset key="sectionInset" minX="0.0" minY="0.0" maxX="0.0" maxY="0.0"/>
-                    </collectionViewFlowLayout>
+                    <inset key="separatorInset" minX="15" minY="0.0" maxX="0.0" maxY="0.0"/>
                     <connections>
-                        <outlet property="dataSource" destination="-1" id="Kpk-0X-tbp"/>
-                        <outlet property="delegate" destination="-1" id="sur-FK-we4"/>
+                        <outlet property="dataSource" destination="-1" id="4Gd-jn-12K"/>
+                        <outlet property="delegate" destination="-1" id="wlS-l7-WWu"/>
                     </connections>
-                </collectionView>
+                </tableView>
             </subviews>
             <color key="backgroundColor" white="0.0" alpha="0.0" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
             <constraints>
-                <constraint firstItem="vUN-kp-3ea" firstAttribute="trailing" secondItem="fYQ-bY-A4C" secondAttribute="trailing" id="EXA-WH-Nyv"/>
-                <constraint firstItem="vUN-kp-3ea" firstAttribute="bottom" secondItem="fYQ-bY-A4C" secondAttribute="bottom" id="FIQ-Fv-PD9"/>
-                <constraint firstItem="fYQ-bY-A4C" firstAttribute="leading" secondItem="vUN-kp-3ea" secondAttribute="leading" id="FUh-iO-lQh"/>
-                <constraint firstItem="fYQ-bY-A4C" firstAttribute="top" secondItem="vUN-kp-3ea" secondAttribute="top" id="UBQ-SW-49O"/>
+                <constraint firstItem="8ou-k5-FPC" firstAttribute="leading" secondItem="vUN-kp-3ea" secondAttribute="leading" id="1dv-Ql-2Ri"/>
+                <constraint firstItem="vUN-kp-3ea" firstAttribute="bottom" secondItem="8ou-k5-FPC" secondAttribute="bottom" id="9ML-GE-syR"/>
+                <constraint firstItem="vUN-kp-3ea" firstAttribute="trailing" secondItem="8ou-k5-FPC" secondAttribute="trailing" id="Fg3-hU-ThV"/>
+                <constraint firstItem="8ou-k5-FPC" firstAttribute="top" secondItem="vUN-kp-3ea" secondAttribute="top" id="Oyb-Bn-LSX"/>
             </constraints>
             <freeformSimulatedSizeMetrics key="simulatedDestinationMetrics"/>
             <viewLayoutGuide key="safeArea" id="vUN-kp-3ea"/>
