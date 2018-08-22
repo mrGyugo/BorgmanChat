@@ -88,6 +88,7 @@
                     </view>
                     <navigationItem key="navigationItem" id="6p1-yt-klb"/>
                     <connections>
+                        <outlet property="bottomInputTextConstraint" destination="obx-uh-K0j" id="zHi-2a-UM8"/>
                         <outlet property="heightInputTextView" destination="BuU-mi-D5Z" id="CSe-zn-Ha7"/>
                         <outlet property="inputTextView" destination="qqt-oz-EuP" id="v4W-IL-dzx"/>
                         <outlet property="mainChatField" destination="u1u-wR-8Uo" id="S3N-he-5Dv"/>

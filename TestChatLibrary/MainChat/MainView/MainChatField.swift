@@ -8,11 +8,24 @@
 
 import UIKit
 
+typealias EmptyBlock = () -> ()
+
 class MainChatField: UIView {
+    
+    //MARK: - Outlets
     
     @IBOutlet private var contentView: UIView!
     @IBOutlet private weak var tableView: TableViewChat!
+    
+    
+    //MARK: - Properties
+    
     let dataSourceChat = DataSourceChat(dateFormatterStyleString: "HH:mm")
+    var hideKeyboardBlock: EmptyBlock?
+    var tableViewOffset: CGPoint {
+        return tableView.contentOffset
+    }
+    
 
     
     
@@ -32,6 +45,8 @@ class MainChatField: UIView {
         self.addSubview(contentView)
         contentView.frame = self.bounds
         contentView.autoresizingMask = [.flexibleWidth, .flexibleHeight]
+        let gesterTap = UITapGestureRecognizer(target: self, action: #selector(hideKeyBoard))
+        contentView.addGestureRecognizer(gesterTap)
     }
     
     override func awakeFromNib() {
@@ -43,6 +58,14 @@ class MainChatField: UIView {
     
     
     //MARK: - Public
+    func changeOffset (_ offset: CGPoint, withAnimation animated: Bool) {
+        tableView.setContentOffset(offset, animated: animated)
+    }
+    
+    func hideKeyboard (_ hideKeyboardBlock: @escaping EmptyBlock) {
+        self.hideKeyboardBlock = hideKeyboardBlock
+    }
+    
     func updateMessages(_ messages: [Message]) {
         for message in messages {
             dataSourceChat.addMessage(message)
@@ -64,11 +87,16 @@ class MainChatField: UIView {
         }
     }
     
-    
     func scrollTableViewInBotton() {
         if dataSourceChat.count > 0 {
             tableView.scrollToRow(at: dataSourceChat.lastMessage, at: .bottom, animated: false)
         }
+    }
+    
+    //MARK: - Actions and Changes
+    @objc func hideKeyBoard() {
+        guard let hideKeyboardBlock = hideKeyboardBlock else { return }
+        hideKeyboardBlock()
     }
     
 }
