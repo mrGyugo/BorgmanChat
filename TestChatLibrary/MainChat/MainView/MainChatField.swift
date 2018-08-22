@@ -26,9 +26,6 @@ class MainChatField: UIView {
         return tableView.contentOffset
     }
     
-
-    
-    
     //MARK: - Initialization
     override init(frame: CGRect) {
         super.init(frame: frame)
@@ -53,6 +50,7 @@ class MainChatField: UIView {
         super.awakeFromNib()
         tableView.alwaysBounceVertical = true
         tableView.translatesAutoresizingMaskIntoConstraints = false
+        tableView.keyboardDismissMode = .onDrag
     }
     
     
@@ -79,6 +77,10 @@ class MainChatField: UIView {
         if tupleForUpdate.needUpdateSection {
             tableView.insertSections(dataSourceChat.indexSet, with: .bottom)
         } else {
+            
+            
+            
+            
             tableView.insertRows(at: [tupleForUpdate.indexPath], with: .bottom)
         }
         tableView.endUpdates()
